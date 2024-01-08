@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkio_t_2024_1=self.webpackChunkio_t_2024_1||[]).push([[8218],{4576:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/UdeA-IoT/IoT_2004-1/blog/tags/hola","allTagsPath":"/UdeA-IoT/IoT_2004-1/blog/tags","count":1,"unlisted":false}')}}]);
