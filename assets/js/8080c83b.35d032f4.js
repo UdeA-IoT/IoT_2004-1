@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkio_t_2024_1=self.webpackChunkio_t_2024_1||[]).push([[5148],{5865:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/IoT_2024-1/blog/tags/facebook","allTagsPath":"/IoT_2024-1/blog/tags","count":1,"unlisted":false}')}}]);
