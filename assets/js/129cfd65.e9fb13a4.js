@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkio_t_2024_1=self.webpackChunkio_t_2024_1||[]).push([[609],{8031:o=>{o.exports=JSON.parse('{"permalink":"/UdeA-IoT/IoT_2004-1/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
