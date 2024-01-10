@@ -62,3 +62,48 @@ En la mayoría de las situaciones, es conveniente tener un sensor donde la salid
 Es importante tener en cuenta estos (y otros) aspectos al realizar la elección del sensor de tal modo que este sea el apropiado para las necesidades de la implementación a realizar. 
 :::
 
+### Ejemplo
+
+Teniendo en cuenta los conceptos vistos previamente, analicemos dos sensores disponibles en el mercado:
+
+#### Sensor de temperatura y humedad DHT22
+
+![dht22](/img/sensores/dht22.png)
+
+Este es un sensor para medir de la temperatura y la humedad ([datasheet](https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf)). Generalmente, en las especificaciones tecnicas dadas en el datasheet se describe toda la información relevante asociada al sensor, la tabla mostrada a continuación, replica la información (tomada del datasheet) mas relevante:
+
+|Caracteristiva|Valor|
+|---|---|
+|Power supply|3.3-6V DC|
+|Output signal|digital signal via single-bus (One wire protocol)|
+|Temperature range|$−40\;to\;80\;°C$|
+|Humidity range|$0\;to\;100\%\;RH$|
+|Temperature Accuracy|$\pm5 °C$|
+|Humidity Accuracy|$\pm2\%\;RH\;(Max:\;\pm5\%\;RH)$|
+|Temperature Resolution|$0.1\;°C$|
+|Humidity Resolutión|$0.1\%\;RH$|
+|Temperature Repeatability|$\pm0.2\;°C$|
+|Humidity Repeatability|$\pm0.1\%\;RH$|
+|Sensing period|2 seconds|
+
+#### Sensor de distancia por ultrasonido  HC-SR04
+
+Al consultar el datasheet ([link](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf)) se resumieron las principales caracteristicas de este en la siguiente tabla:
+
+|Caracteristiva|Valor|
+|---|---|
+|Working Voltage|5V DC|
+|Working Current|15mA|
+|Working Frequency|40 Hz|
+|Max Range|4 m|
+|Min Range|2 cm|
+|Ranging Accuracy|$\pm3\;mm$|
+|Accuracy|$0.1\;°C$|
+|Measuring Angle|10us TTL Pulse|
+|Echo Output Signal|Input TTL lever signal and the range in proportion|
+
+El diagrama de timing (el cual es importante para la deducción de la distancia) para este sensor se muestra a continuación:
+
+![timing_HC-SR04](/img/sensores/timing_HC-SR04.png)
+
+
