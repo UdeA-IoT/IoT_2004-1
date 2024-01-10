@@ -188,3 +188,4 @@ Si se usa otro sensor del mismo tipo (por ejemplo el LM35), el procedimiento de 
 A diferencia de los chips analogicos, estos circuitos integrados tienen una interfaz serial que puede ser usada por los microcontroladores para obtener la información de la temperatura medida. Por ejemplo el sensor **DS18B20** usa un bus serial conocido como OneWire ([link](https://en.wikipedia.org/wiki/1-Wire)) el cual permite que multiples sensores compartan la misma linea de datos, lo cual constituye una ventaja evidente frente a los chips analogos. En el tutorial **Getting Temperature from Multiple DS18B20 Sensors** ([link](https://randomnerdtutorials.com/guide-for-ds18b20-temperature-sensor-with-arduino)) de **RANDOM NERD TUTORIALS** se explica el uso de este sensor. La siguiente figura tomada de de este tutorial ilustra un caso de uso con varios sensores de temperatura: 
 
 ![DS18B20_arduino](/img/sensores/temperatura/DS18B20_arduino.png)
+
