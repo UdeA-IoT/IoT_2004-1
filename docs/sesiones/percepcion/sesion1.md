@@ -36,6 +36,19 @@ Teniendo en cuenta el caso de uso anteriormente expuesto, vamos a analizar cuale
 
 Para tal fin, revise la presentación **Components of IoT Apps** [[link]](https://github.com/microsoft/IoT-For-Beginners/blob/main/slides/lesson-2.pdf)
 
+Una **Cosa** (**Thing**) se refiere a un dispositivo que interactua con el mundo fisico a traves de sensores y actuadores. Para aprender a realizar aplicaciones para IoT el primer paso es disponer de un kit de desarrollo IoT.
+
+Un kit de desarrollo IoT consiste de varios dos positivos IoT de uso general (con caracteristicas que no poseen los dispositivos de producción, tales como pines externos para conectar a sensores y actuadores y hardware adicional para soporte de debugging entre otras cosas) empleados por los desarrolladores para realizar prototipado. Existen dos tipos de kits de desarrollo:
+
+* **Computadora monoplaca (single-board Computer)**
+  
+  <Image img={require('/img/sesiones/percepcion/1/raspberry-pi-4.jpg')} />
+
+
+* **Microcontroladores (microcontrollers)**
+  
+  <Image img={require('/img/sesiones/percepcion/1/uno-r3.jpg')} />
+
 ## Placas de desarrollo disponibles
 
 

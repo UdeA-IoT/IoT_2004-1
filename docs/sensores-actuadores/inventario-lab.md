@@ -105,8 +105,18 @@ La siguiente tabla resume y clasifica los componentes disponibles en el kit:
 |KY-022 IR Receiver||
 
 :::info
-
 Varios ejemplos asociados a este kit se pueden encontrar en la pagina **Arduino | 37 in 1 Sensors Kit Explained
 ** [[link]](https://www.instructables.com/Arduino-37-in-1-Sensors-Kit-Explained/)
-
 :::
+
+## Tiny Machine Learning Kit
+
+![tinyml-kit](/img/lab_kits/tinyml-kit.jpg)
+
+La siguiente tabla muestra cada uno de los modulos del Kit:
+
+|Tipo|Modulos|
+|---|---|
+|Sensor|**Integrados en la placa Arduino Nano 33 BLE Sense Lite**<li> Sensor IMU LSM9DS1 [[Datasheet]](https://content.arduino.cc/assets/Nano_BLE_Sense_lsm9ds1.pdf) </li> <li> Micrófono MP34DT05 [[Datasheet]](https://content.arduino.cc/assets/Nano_BLE_Sense_mp34dt05-a.pdf) </li> <li>Sensor de gestos, luz, proximidad APDS9960 [[Datasheet]](https://content.arduino.cc/assets/Nano_BLE_Sense_av02-4191en_ds_apds-9960.pdf) </li> <li> Sensor de presión barométrica LPS22HB [[Datasheet]](https://content.arduino.cc/assets/Nano_BLE_Sense_lps22hb.pdf) </li> **Externos** <li> OV7675 Camera module [[link]](https://docs.arducam.com/) [[repo]](https://github.com/ArduCAM/Arduino) </li>|
+|Actuadores|---|
+|Tarjetas de expancion|<li> Arduino Tiny Machine Learning Shield</li>|

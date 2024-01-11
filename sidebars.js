@@ -67,7 +67,9 @@ const sidebars = {
       type: 'category',
       label: 'Capa de percepcion',                
       items: ['sesiones/percepcion/intro',
-              'sesiones/percepcion/sesion1',],
+              'sesiones/percepcion/sesion1',
+              'sesiones/percepcion/sesion2',
+              'sesiones/percepcion/sesion3',],
     },
     {
       type: 'category',
