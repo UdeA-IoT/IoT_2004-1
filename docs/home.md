@@ -6,11 +6,11 @@ sidebar_label: 'Home'
 
 ## Diagrama de Aplicacion ejemplo - Curso IoT Networks and Protocols
 
+A continuación se muestra el diagrama de un sistema de control en tiempo real para jugar con un laberinto hecho en el curso **CurtinX: Introduction to the Internet of Things (IoT)** ([link](https://www.edx.org/learn/iot-internet-of-things/curtin-university-introduction-to-the-internet-of-things-iot)) de la **Universidad de Curtin** ([link](https://www.curtin.edu.au/)):
+
 ![img alt](/img/IoT-example.png)
 
-This is my **first Docusaurus document**!
-
-## Video Aplicacion ejemplo - Curso IoT Networks and Protocols 
+En el siguiente video se puede observar el funcionamiento del sistema anteriormente expuesto:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ErS2W58StIs?si=a5B0oVeiGXwS7KaK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

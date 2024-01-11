@@ -61,6 +61,25 @@ const sidebars = {
               ],
     },
   ],
+  sesionesSidebar: [
+    'sesiones/index',
+    {
+      type: 'category',
+      label: 'Capa de percepcion',                
+      items: ['sesiones/percepcion/intro',
+              'sesiones/percepcion/sesion1',],
+    },
+    {
+      type: 'category',
+      label: 'Capa de red',                
+      items: ['sesiones/red/intro',],
+    },
+    {
+      type: 'category',
+      label: 'Capa de aplicación',                
+      items: ['sesiones/aplicacion/intro',],
+    },
+  ],
 };
 
 export default sidebars;
