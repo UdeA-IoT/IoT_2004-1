@@ -1,8 +1,12 @@
-# Capa de percepción - Sesión 2
+---
+sidebar_label: 'Sesión 2'
+---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Image from '@theme/IdealImage';
+
+# Capa de percepción - Sesión 2
 
 :::note[**Objetivos**]
 * Comprender los conceptos básicos para realizar prototipado.
