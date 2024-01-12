@@ -69,7 +69,8 @@ const sidebars = {
       items: ['sesiones/percepcion/intro',
               'sesiones/percepcion/sesion1',
               'sesiones/percepcion/sesion2',
-              'sesiones/percepcion/sesion3',],
+              'sesiones/percepcion/sesion3',
+              'sesiones/percepcion/sesion4',],
     },
     {
       type: 'category',
