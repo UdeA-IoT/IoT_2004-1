@@ -15,3 +15,4 @@ En construcción...
 ## Referencias
 
 * https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi
+* https://docs.arduino.cc/learn/communication/spi/

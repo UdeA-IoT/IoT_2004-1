@@ -125,6 +125,15 @@ const sidebars = {
             "sesiones/percepcion/sesion6d",
           ],
         },
+        {
+          type: "category",
+          label: "Sesión 7",
+          items: [
+            "sesiones/percepcion/sesion7a",
+            "sesiones/percepcion/sesion7b",
+            "sesiones/percepcion/sesion7c",
+          ],
+        },
       ],
     },
     {
