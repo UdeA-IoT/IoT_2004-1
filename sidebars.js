@@ -115,6 +115,16 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: "category",
+          label: "Sesión 6",
+          items: [
+            "sesiones/percepcion/sesion6a",
+            "sesiones/percepcion/sesion6b",
+            "sesiones/percepcion/sesion6c",
+            "sesiones/percepcion/sesion6d",
+          ],
+        },
       ],
     },
     {
