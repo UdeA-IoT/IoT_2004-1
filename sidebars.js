@@ -93,7 +93,7 @@ const sidebars = {
                 "sesiones/percepcion/sesion4e_1",
                 "sesiones/percepcion/sesion4e_2",
                 "sesiones/percepcion/sesion4e_3",
-                "sesiones/percepcion/sesion4e_4",                
+                "sesiones/percepcion/sesion4e_4",
               ],
             },
           ],
@@ -104,7 +104,15 @@ const sidebars = {
           items: [
             "sesiones/percepcion/sesion5a",
             "sesiones/percepcion/sesion5b",
-            "sesiones/percepcion/sesion5c",                                      
+            "sesiones/percepcion/sesion5c",
+            {
+              type: "category",
+              label: "Ejemplo 3",
+              items: [
+                "sesiones/percepcion/sesion5d_1",
+                "sesiones/percepcion/sesion5d_2",
+              ],
+            },
           ],
         },
       ],
