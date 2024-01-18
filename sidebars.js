@@ -137,15 +137,15 @@ const sidebars = {
             "sesiones/percepcion/sesion7f",
           ],
         },
+        {
+          type: "category",
+          label: "Sesión 8",
+          items: ["sesiones/percepcion/sesion8a", 
+                  "sesiones/percepcion/sesion8b",
+          ],
+        },
       ],
-    },
-    {
-      type: "category",
-      label: "Sesión 8",
-      items: ["sesiones/percepcion/sesion8a", 
-              "sesiones/percepcion/sesion8b",
-      ],
-    },
+    },    
     {
       type: "category",
       label: "Capa de red",
