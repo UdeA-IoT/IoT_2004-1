@@ -135,6 +135,7 @@ const sidebars = {
             "sesiones/percepcion/sesion7d",
             "sesiones/percepcion/sesion7e",
             "sesiones/percepcion/sesion7f",
+            "sesiones/percepcion/sesion7g",
           ],
         },
         {

@@ -147,6 +147,8 @@ Las respuestas de la API REST son respuestas HTTP que comunica los resultados de
 * http://dweet.io/
 * http://freeboard.io/
 
+
+
 ## Referencias
 
 * https://randomnerdtutorials.com/getting-started-with-esp32/
