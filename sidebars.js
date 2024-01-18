@@ -132,8 +132,18 @@ const sidebars = {
             "sesiones/percepcion/sesion7a",
             "sesiones/percepcion/sesion7b",
             "sesiones/percepcion/sesion7c",
+            "sesiones/percepcion/sesion7d",
+            "sesiones/percepcion/sesion7e",
+            "sesiones/percepcion/sesion7f",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Sesión 8",
+      items: ["sesiones/percepcion/sesion8a", 
+              "sesiones/percepcion/sesion8b",
       ],
     },
     {
