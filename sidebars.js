@@ -141,12 +141,30 @@ const sidebars = {
         {
           type: "category",
           label: "Sesión 8",
-          items: ["sesiones/percepcion/sesion8a", 
-                  "sesiones/percepcion/sesion8b",
+          items: [
+            "sesiones/percepcion/sesion8a",
+            "sesiones/percepcion/sesion8b",
+          ],
+        },
+        {
+          type: "category",
+          label: "Sesión 9",
+          items: [
+            "sesiones/percepcion/sesion9a",
+            {
+              type: "category",
+              label: "Interrupciones",
+              items: ["sesiones/percepcion/sesion9b_1"],
+            },
+            {
+              type: "category",
+              label: "Threads",
+              items: ["sesiones/percepcion/sesion9c_1"],
+            },
           ],
         },
       ],
-    },    
+    },
     {
       type: "category",
       label: "Capa de red",
