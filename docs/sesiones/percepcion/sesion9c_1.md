@@ -13,7 +13,8 @@ import Image from '@theme/IdealImage';
 * Diseñar una aplicación basica Rest
 * En construcción....
 :::
-## Referencias
+
+
 
 
 

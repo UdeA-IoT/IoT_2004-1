@@ -6,49 +6,55 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Image from '@theme/IdealImage';
 
-# Interrupciones
+# Interrupciones externas
 
 :::note[**Objetivos**]
 * En construcción....
 :::
 
-## Introducción
-
-Como se mostro anteriormente, el uso de **polling** tiene sus limitaciones sobre todo en lo que respecta en dar respuestas rapidas a eventos criticos. Para solucionar este problema se hacen uso de las **interruciones**.
-
-Cuando se trabaja con interrupciones, el esquema del **super loop** se conserva; sin embargo, a diferencia del **polling**, el flujo de ejecución en el ciclo infinito este puede ser **interrumpido**. 
-
-![super_loop_irq](/img/sesiones/percepcion/9/interrupts/super_loop_irq.png)
-
-A continuación, se entratan a tratar estas con mas detalle y se explicará como usarlas haciendo uso del API de Arduino.
-
-## Interrupciones
-
-Las **interrupciones** son un tipo de *mecanismo* de hardware para manejar *eventos asincronos* (evento que no se sabe cuando sucederá). 
-
-Cuando ocurre una interrupción, el mecanismo de interrupción invocará a una rutina llamada manejador de interrupciones (**interrupt handler** tambien conocido como **ISR: Interrupt Service Routine**) suspendiendo temporalmente el programa que esta siendo ejecutado y pasando a ejecutar las instruccióne definidas en el **ISR**. Cuando las instrucciones son ejecutadas, el programa se reanuda (generalmente) en el punto en el cual fue interrupido. La siguiente figura (tomada del siguiente [link](https://www.rt-thread.io/document/site/programming-manual/interrupt/interrupt/)) describe el proceso anterior:
-
-![interrupt_work](/img/sesiones/percepcion/9/interrupts/interrupt_work.png)
-
-Existen dos tipos de interrupciones:
-* **Interrupciones por software**:  Estas son generadas por alguna condición que se produce como resultado de la ejecución de una instrucción. Una división por cero o una interrupción por timer son dos casos tipicos.
-* **Interrupciones por hardware**: Estas ocurren como respuesta a eventos externos como el cambio en el estado de un pin, o la recepción de un paquete en un proceso de comunicación.
-
-## Sobre las rutinas de servicio a interrupción (ISR - Interrupt service routine)
-
-Las **ISR** (o **interrupt handler**) son las funciones que son lanzadas cuando un evento se produce. Como cualquier función, estas contienen un conjunto de instrucciones que son ejecutadas; sin embargo, al escribirlas es importante tener en cuenta los siguientes aspectos:
-* Como las interrupciones estan pensadas en dar respuesta rapida a eventos, una estrategia comun al codificar ISR consiste en mantenerlas lo mas cortas posible. Es necesario evitar procesos (calculos coplejos, comunicación, etc.) que tomen mucho tiempo dentro de las ISR. Solo ISR largas son necesarias si esta consideranto permitir interrupciones anidadas.
-* Comunmente, la función de la ISR se limita a activar una bandera, incrementar un contador, o modificar una variable. El objetivo de cualquiera de las operaciones previamente descritas consite en cambiar el flujo de ejecución dentro del ciclo infinito.
-* Para poder modificar una variable externa dentro de una interrupción, al momento de hacer la declaración, esta debe tener el modificador **```volatile```**. Este modificador indica al compilador que la variable tiene que se consultada antes de ser usada debido a que puede haber sido modificada de forma ajena al flujo de ejecución normal del programa. A continuacón se muestra la sintaxis:
-
-  ```cpp
-  volatile tipo nombre_vatiable [= valor_inicial];
-  ```  
+## Configuración de una interrupción
 
 
 
+Como se habia explicado previamente, cuando ocurre un evento o interrupción, el procesador se da cuenta de inmediato, guarda su estado de ejecución, ejecuta una pequeña porción de código (**interrupt handler** o **interrupt service routine**) y luego regresa a lo que estaba haciendo antes.
 
+El programador es quien define el codigo que será ejecutado cuando una interrupción particular ocurre dentro del progama. Para configurar una interrupción usando el API de Arduino se usa la función ```adjuntaInterrupt()``` cuya sintaxis se muestra a continuación:
 
+```cpp
+attachInterrupt(digitalPinToInterrupt(GPIO), funcion, mode);
+```
+
+Esta función toma los siguientes tres parametros:
+* **```digitalPinToInterrupt(pin)```**: Numero del pin de la interrupción. Esta función le indica al microprocesador el pin que se va a monitorear. Los pines susceptibles de generar interrupciones varían en función del modelo de board empleada. La siguiente tabla muestra algunos casos:
+
+  |Board|INT0|INT1|INT2|INT3|INT4|INT5|
+  |---|---|---|---|---|---|
+  |UNO,	Nano, Ethernet, Mini Pro|2 |3|||||
+  |Mega|	2	|3	|21|	20|	19|	18|
+  |Leonardo|	3	|2|	0	|1|	7|
+  
+  Modelos como la DUE, tienen interrupciones asociadas a todos los pines.
+      	
+* **```ISR```**: Localización del codigo (interrupt service routine) que se ejecutará si la interrupción es lanzada. 
+* **```mode```**: Define el tipo de evento que desencadenara la interrupción. Los posibles valores son:
+  * **```LOW```**: Indica la activación de la interrupción cuando el pin este en BAJO.
+  * **```HIGH```**: Activa la interrupción siempre que el pin este en ALTO.
+  * **```CHANGE```**: Activa la interrupción cuando el pin cambia de valor (ya sea de ALTO a BAJO o viceversa).
+  * **```FALLING```**: Activa la interrucción por flanco de caida (El pin pasa de ALTO a BAJO).
+  * **```RISING```**:  Activa la interrucción por flanco de subida (El pin pasa de BAJO a ALTO).
+
+:::tip
+Para mas información sobre la función ```attachInterrupt()``` del API de arduino consulte las siguientes paginas:
+* Documentación del Arduino ([link](https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/))
+* Documentación del ESP32 ([link](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/gpio.html#interrupts))
+:::
+
+### 
+
+Los pasos de configuración de una interrupción se describen a continuación: 
+* https://deepbluembedded.com/esp32-external-interrupts-pins-arduino-examples/#google_vignette
+* https://programarfacil.com/blog/arduino-blog/interrupciones-con-arduino-ejemplo-practico/
+* https://www.luisllamas.es/que-son-y-como-usar-interrupciones-en-arduino/
 
 ## Apuntes
 
@@ -73,6 +79,7 @@ Las **ISR** (o **interrupt handler**) son las funciones que son lanzadas cuando 
       * RISING: to trigger when the pin goes from LOW to HIGH;
 
 
+* https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/gpio.html
 
 
 ### Apuntes 2
@@ -83,26 +90,8 @@ Las **ISR** (o **interrupt handler**) son las funciones que son lanzadas cuando 
   * external interrupts 
   * pin-change interrupts
 
-### Apuntes 3 
 
-> **URL**: https://www.theengineeringprojects.com/2021/12/esp32-interrupts.html
 
-* Polling:
-  * Polling is a process that performs continuous monitoring. Basically, the processor continuously monitors the state of a specific device or a peripheral, and when the status of the device satisfies the condition, the device executes the task that was required. Then it moves on to the next device to monitor until each one has been served. The processor performs no other operations and devotes all of its processing time to monitoring, and all other tasks are suspended until the current one is completed.
-  * So, to overcome the disadvantage of the polling method, we chose the Interrupt method.
-* Interrups
-  * ESP32 module has a dual-core processor and each core consists of 32 interrupts. Basically interrupts are of two types:
-    * Software interrupts: Software interrupts are internal which occur in response to the execution of a software instruction. For example, a timer can be used to generate a software interrupt.   
-    * Hardware interrupts: Hardware interrupts are the external interrupts that are caused by an external event. For example, an external push button connected to ESP32’s GPIO or a motion sensor will generate an interrupt (event) if a motion is detected.
-  * ISR (Interrupt Service Routine): 
-    * When an interrupt occurs during normal program execution, an ISR (interrupt service routine) or an interrupt handler is called into action. The normal program execution will be halted, and the interrupt will be executed based on the priority level of the interrupt. 
-    * Every interrupt has a fixed memory location where the address of the ISR is stored.
-    * Interrupt Vector Table refers to a memory table or memory table that is used to store the location of an interrupt service routine.
-
-### Apuntes 4
-
-* https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/gpio.html
-* https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/timer.html
 
 ### Apuntes 5 (Sparkfun)
 
@@ -186,4 +175,3 @@ Polling:
 * https://www.hackster.io/485734/azure-rtos-threadx-for-arduino-101-threads-963a8d
 * https://wiki.seeedstudio.com/reTerminal-build-UI-using-LVGL/
 * https://www.rt-thread.io/
-* https://redirect.cs.umbc.edu/~tinoosh/cmpe311/notes/Interrupts.pdf

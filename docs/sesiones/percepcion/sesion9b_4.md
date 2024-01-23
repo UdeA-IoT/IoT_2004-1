@@ -6,48 +6,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Image from '@theme/IdealImage';
 
-# Interrupciones
+# Interrupciones por comunicación serial
 
 :::note[**Objetivos**]
 * En construcción....
 :::
 
 ## Introducción
-
-Como se mostro anteriormente, el uso de **polling** tiene sus limitaciones sobre todo en lo que respecta en dar respuestas rapidas a eventos criticos. Para solucionar este problema se hacen uso de las **interruciones**.
-
-Cuando se trabaja con interrupciones, el esquema del **super loop** se conserva; sin embargo, a diferencia del **polling**, el flujo de ejecución en el ciclo infinito este puede ser **interrumpido**. 
-
-![super_loop_irq](/img/sesiones/percepcion/9/interrupts/super_loop_irq.png)
-
-A continuación, se entratan a tratar estas con mas detalle y se explicará como usarlas haciendo uso del API de Arduino.
-
-## Interrupciones
-
-Las **interrupciones** son un tipo de *mecanismo* de hardware para manejar *eventos asincronos* (evento que no se sabe cuando sucederá). 
-
-Cuando ocurre una interrupción, el mecanismo de interrupción invocará a una rutina llamada manejador de interrupciones (**interrupt handler** tambien conocido como **ISR: Interrupt Service Routine**) suspendiendo temporalmente el programa que esta siendo ejecutado y pasando a ejecutar las instruccióne definidas en el **ISR**. Cuando las instrucciones son ejecutadas, el programa se reanuda (generalmente) en el punto en el cual fue interrupido. La siguiente figura (tomada del siguiente [link](https://www.rt-thread.io/document/site/programming-manual/interrupt/interrupt/)) describe el proceso anterior:
-
-![interrupt_work](/img/sesiones/percepcion/9/interrupts/interrupt_work.png)
-
-Existen dos tipos de interrupciones:
-* **Interrupciones por software**:  Estas son generadas por alguna condición que se produce como resultado de la ejecución de una instrucción. Una división por cero o una interrupción por timer son dos casos tipicos.
-* **Interrupciones por hardware**: Estas ocurren como respuesta a eventos externos como el cambio en el estado de un pin, o la recepción de un paquete en un proceso de comunicación.
-
-## Sobre las rutinas de servicio a interrupción (ISR - Interrupt service routine)
-
-Las **ISR** (o **interrupt handler**) son las funciones que son lanzadas cuando un evento se produce. Como cualquier función, estas contienen un conjunto de instrucciones que son ejecutadas; sin embargo, al escribirlas es importante tener en cuenta los siguientes aspectos:
-* Como las interrupciones estan pensadas en dar respuesta rapida a eventos, una estrategia comun al codificar ISR consiste en mantenerlas lo mas cortas posible. Es necesario evitar procesos (calculos coplejos, comunicación, etc.) que tomen mucho tiempo dentro de las ISR. Solo ISR largas son necesarias si esta consideranto permitir interrupciones anidadas.
-* Comunmente, la función de la ISR se limita a activar una bandera, incrementar un contador, o modificar una variable. El objetivo de cualquiera de las operaciones previamente descritas consite en cambiar el flujo de ejecución dentro del ciclo infinito.
-* Para poder modificar una variable externa dentro de una interrupción, al momento de hacer la declaración, esta debe tener el modificador **```volatile```**. Este modificador indica al compilador que la variable tiene que se consultada antes de ser usada debido a que puede haber sido modificada de forma ajena al flujo de ejecución normal del programa. A continuacón se muestra la sintaxis:
-
-  ```cpp
-  volatile tipo nombre_vatiable [= valor_inicial];
-  ```  
-
-
-
-
 
 
 ## Apuntes
@@ -186,4 +151,3 @@ Polling:
 * https://www.hackster.io/485734/azure-rtos-threadx-for-arduino-101-threads-963a8d
 * https://wiki.seeedstudio.com/reTerminal-build-UI-using-LVGL/
 * https://www.rt-thread.io/
-* https://redirect.cs.umbc.edu/~tinoosh/cmpe311/notes/Interrupts.pdf
