@@ -154,7 +154,21 @@ const sidebars = {
             {
               type: "category",
               label: "Interrupciones",
-              items: ["sesiones/percepcion/sesion9b_1"],
+              items: [
+                "sesiones/percepcion/sesion9b_1",
+                {
+                  type: "category",
+                  label: "Interrupciones externas",
+                  items: [
+                    "sesiones/percepcion/sesion9b_2",
+                    "sesiones/percepcion/sesion9b_2_1",
+                  ],
+                },
+
+
+                "sesiones/percepcion/sesion9b_3",
+                "sesiones/percepcion/sesion9b_4",
+              ],
             },
             {
               type: "category",

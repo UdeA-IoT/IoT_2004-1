@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Introducción'
+sidebar_label: 'Interrupciones por timer'
 ---
 
 import Tabs from '@theme/Tabs';

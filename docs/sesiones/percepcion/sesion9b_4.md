@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Introducción'
+sidebar_label: 'Interrupciones por comunicación'
 ---
 
 import Tabs from '@theme/Tabs';
